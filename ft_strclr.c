@@ -6,14 +6,14 @@
 /*   By: apisotsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 14:52:53 by apisotsk          #+#    #+#             */
-/*   Updated: 2016/11/21 14:53:18 by apisotsk         ###   ########.fr       */
+/*   Updated: 2016/11/22 13:44:37 by apisotsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_strclr(char *str)
+void	ft_strclr(char *str)
 {
-    if (str)
-        ft_bzero(str, ft_strlen(str));
+	if (str)
+		ft_bzero(str, ft_strlen(str));
 }

@@ -6,14 +6,14 @@
 /*   By: apisotsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 14:54:28 by apisotsk          #+#    #+#             */
-/*   Updated: 2016/11/21 14:54:31 by apisotsk         ###   ########.fr       */
+/*   Updated: 2016/11/22 13:48:02 by apisotsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_strdel(char **as)
+void	ft_strdel(char **as)
 {
-    free(*as);
-    as = NULL;
+	free(*as);
+	as = NULL;
 }

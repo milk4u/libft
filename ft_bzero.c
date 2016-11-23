@@ -6,11 +6,11 @@
 /*   By: apisotsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 13:15:22 by apisotsk          #+#    #+#             */
-/*   Updated: 2016/11/21 16:27:58 by apisotsk         ###   ########.fr       */
+/*   Updated: 2016/11/22 13:10:45 by apisotsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftlib.h"
+#include "libft.h"
 
 void	ft_bzero(void *str, size_t n)
 {

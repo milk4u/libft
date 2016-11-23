@@ -6,14 +6,14 @@
 /*   By: apisotsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 14:49:20 by apisotsk          #+#    #+#             */
-/*   Updated: 2016/11/21 14:50:09 by apisotsk         ###   ########.fr       */
+/*   Updated: 2016/11/22 13:43:26 by apisotsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strcat(char *dst, const char *src)
+char	*ft_strcat(char *dst, const char *src)
 {
-    ft_strcpy(&dst[ft_strlen(dst)], src);
-    return (dst);
+	ft_strcpy(&dst[ft_strlen(dst)], src);
+	return (dst);
 }

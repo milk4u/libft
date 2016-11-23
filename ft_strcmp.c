@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apisotsk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/22 13:46:36 by apisotsk          #+#    #+#             */
+/*   Updated: 2016/11/22 13:46:54 by apisotsk         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int strcmp(const char *s1, const char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-    int i;
+	int i;
 
-    i = 0;
-    while (s1[i] == s2[i])
-        if (s2[i++] == '\0')
-            return (0);
-    return (s1[i] - s2[i]);
+	i = 0;
+	while (s1[i] == s2[i])
+		if (s2[i++] == '\0')
+			return (0);
+	return (s1[i] - s2[i]);
 }
