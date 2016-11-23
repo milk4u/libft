@@ -28,21 +28,21 @@ int	main(void)
 	char	test4[100];
 
 	if (ft_strequ(test, test2))
-		printf ("F*ck you\n");
+		printf ("BAD\n");
 	if (ft_strequ(test, test3))
-		printf ("F*ck you\n");
+		printf ("BAD\n");
 	if (ft_strequ(test, test4))
-		printf ("F*ck you\n");
+		printf ("BAD\n");
 	if (ft_strequ(test2, test3))
-		printf ("F*ck you\n");
+		printf ("BAD\n");
 	if (ft_strequ(test2, test4))
-		printf ("F*ck you\n");
+		printf ("BAD\n");
 	if (ft_strequ(test3, test4))
-		printf ("F*ck me\n");
+		printf ("Good\n");
 	if (ft_strequ(test3, test3))
-		printf ("F*ck me\n");
+		printf ("Good\n");
 	if (ft_strequ(test4, test4))
-		printf ("F*ck me\n");
+		printf ("Good\n");
 	if (ft_strequ(test2, test2))
-		printf ("F*ck me\n");
+		printf ("Good\n");
 }
