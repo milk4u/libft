@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -21,4 +22,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strcpy(new, s1);
 	ft_strcat(new, s2);
 	return (new);
+}
+
+int		main(void)
+{
+	char *new;
+
+	new = ft_strjoin("12345", " - vishel zacyk pogulat");
+	printf ("%s\n", new);
+	return (0);
 }

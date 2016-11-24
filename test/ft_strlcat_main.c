@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apisotsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/21 14:59:39 by apisotsk          #+#    #+#             */
-/*   Updated: 2016/11/22 14:30:53 by apisotsk         ###   ########.fr       */
+/*   Created: 2016/11/22 14:02:48 by apisotsk          #+#    #+#             */
+/*   Updated: 2016/11/22 14:02:50 by apisotsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-char		*ft_strncat(char *dst, const char *src, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	dstlen;
 	size_t	i;
 
+	dstlen = ft_strlen(dst) < size ? ft_strlen(dst) : size;
+	if (size - dstlen == 0)
+		return (size + ft_strlen(src));
 	i = -1;
-	dstlen = ft_strlen(dst);
-	while ((++i < n) && (src[i] != '\0'))
+	while ((dstlen + ++i < size - 1) && (src[i]))
 		dst[dstlen + i] = src[i];
 	dst[dstlen + i] = '\0';
-	return (dst);
+	return (dstlen + ft_strlen(src));
+}
+
+int		main(void)
+{
+	char	*dst = ft_strnew(256);
+	ft_strcpy(dst, "123"); 
+	char	src[128] = "123asdasdasdasdadasd";
+
+	printf ("%zu, - %s\n", ft_strlcat(dst, src, 1), dst);
+	return(0);
 }

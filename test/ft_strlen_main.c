@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apisotsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/22 14:01:42 by apisotsk          #+#    #+#             */
-/*   Updated: 2016/11/22 14:02:01 by apisotsk         ###   ########.fr       */
+/*   Created: 2016/11/21 14:58:01 by apisotsk          #+#    #+#             */
+/*   Updated: 2016/11/22 17:17:35 by apisotsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+size_t	ft_strlen(const char *str)
 {
-	char *new;
+	size_t size;
 
-	if (!(new = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
-		return (NULL);
-	ft_strcpy(new, s1);
-	ft_strcat(new, s2);
-	return (new);
+	size = 0;
+	while (str[size] != '\0')
+		size++;
+	return (size);
+}
+
+int		main(void)
+{
+	char	s1[] = "1234567890";
+	char	s2[] = "";
+	char	s3[20];
+	char	s4[] = "abcdefg8";
+
+	printf ("%zu %zu %zu %zu\n", ft_strlen(s1), ft_strlen(s2), ft_strlen(s3), ft_strlen(s4));
+
+	return(0);
 }

@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apisotsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/22 14:01:42 by apisotsk          #+#    #+#             */
-/*   Updated: 2016/11/22 14:02:01 by apisotsk         ###   ########.fr       */
+/*   Created: 2016/11/21 14:16:40 by apisotsk          #+#    #+#             */
+/*   Updated: 2016/11/22 13:22:22 by apisotsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void		*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	char *new;
+	size_t	i;
 
-	if (!(new = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
-		return (NULL);
-	ft_strcpy(new, s1);
-	ft_strcat(new, s2);
-	return (new);
+	i = -1;
+	while (++i < n)
+	{
+		((unsigned char*)dst)[i] = ((unsigned char*)src)[i];
+		if (((unsigned char *)dst)[i] == (unsigned char)c)
+			return (&dst[i + 1]);
+	}
+	return (NULL);
 }

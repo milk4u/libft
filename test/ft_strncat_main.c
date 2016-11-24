@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apisotsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/22 14:01:42 by apisotsk          #+#    #+#             */
-/*   Updated: 2016/11/22 14:02:01 by apisotsk         ###   ########.fr       */
+/*   Created: 2016/11/21 14:59:39 by apisotsk          #+#    #+#             */
+/*   Updated: 2016/11/22 14:30:53 by apisotsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char		*ft_strncat(char *dst, const char *src, size_t n)
 {
-	char *new;
+	size_t	dstlen;
+	size_t	i;
 
-	if (!(new = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
-		return (NULL);
-	ft_strcpy(new, s1);
-	ft_strcat(new, s2);
-	return (new);
+	i = -1;
+	dstlen = ft_strlen(dst);
+	while ((++i < n) && (src[i] != '\0'))
+		dst[dstlen + i] = src[i];
+	dst[dstlen + i] = '\0';
+	return (dst);
+}
+
+int		main(void)
+{
+	char	buff[128] = "START VALUE ";
+	char	add[64] = "12345678900987654321";
+
+	ft_strncat(buff, add, 1000);
+	printf ("%s\n", buff);
+	return (0);
 }

@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apisotsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/22 14:01:42 by apisotsk          #+#    #+#             */
-/*   Updated: 2016/11/22 14:02:01 by apisotsk         ###   ########.fr       */
+/*   Created: 2016/11/21 15:00:31 by apisotsk          #+#    #+#             */
+/*   Updated: 2016/11/22 15:01:39 by apisotsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int			ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char *new;
+	size_t	i;
 
-	if (!(new = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
-		return (NULL);
-	ft_strcpy(new, s1);
-	ft_strcat(new, s2);
-	return (new);
+	i = 0;
+	while ((s1[i] == s2[i]) && (i < n))
+	{
+		if (s2[i] == '\0')
+			return (0);
+		i++;
+	}
+	if (i == n)
+		return (0);
+	return (s1[i] - s2[i]);
+}
+
+int		main(void)
+{
+	char	buff[128] = "1234567890o987654321";
+	char	add[64] =   "12345678900987654321";
+
+	printf ("%d\n", ft_strncmp(buff, add, 10));
+	return (0);
 }

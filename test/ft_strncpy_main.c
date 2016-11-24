@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apisotsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/22 14:01:42 by apisotsk          #+#    #+#             */
-/*   Updated: 2016/11/22 14:02:01 by apisotsk         ###   ########.fr       */
+/*   Created: 2016/11/21 15:01:48 by apisotsk          #+#    #+#             */
+/*   Updated: 2016/11/22 15:01:22 by apisotsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char		*ft_strncpy(char *dst, const char *src, size_t n)
 {
-	char *new;
+	size_t	i;
 
-	if (!(new = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
-		return (NULL);
-	ft_strcpy(new, s1);
-	ft_strcat(new, s2);
-	return (new);
+	i = 0;
+	while ((src[i] != '\0') && (i < n))
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	while (i++ < n)
+		dst[i] = '\0';
+	return (dst);
+}
+
+int		main(void)
+{
+	char	buff[256];
+	char	*src = "\n";
+
+	ft_strncpy(buff, src, 2);
+	printf("%s\n", buff);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: apisotsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 14:50:36 by apisotsk          #+#    #+#             */
-/*   Updated: 2016/11/22 13:44:09 by apisotsk         ###   ########.fr       */
+/*   Updated: 2016/11/24 20:36:13 by apisotsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	while (*str != c)
+	while (*str)
 	{
-		if (*str == '\0')
-			return (NULL);
+		if (*str == c)
+			return ((char*)str);
 		str++;
 	}
-	return (str);
+	return (NULL);
 }
