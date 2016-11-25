@@ -11,17 +11,30 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#define SIZE 12
+
+size_t	get_size(int n)
+{
+	size_t	size;
+
+	size = 0;
+	if (n <= 0)
+		size++;
+	while (n != 0)
+		{
+			size++;
+			n /= 10;
+		}
+	return (size);
+}
 
 char	*ft_itoa(int n)
 {
 	char	*arr;
 	char	sign;
 
-	sign = 0;
-	if (n < 0)
-		sign = 1;
-	arr = ft_strnew(SIZE);
+	sign = n >= 0 ? 0 : 1;
+	if (!(arr = ft_strnew(get_size(n))))
+		return (0);
 	arr += ft_strlen(arr);
 	*arr = '\0';
 	if (n == 0)

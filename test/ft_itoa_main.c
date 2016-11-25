@@ -12,17 +12,30 @@
 
 #include "libft.h"
 #include <stdio.h>
-#define SIZE 12
+
+size_t	get_size(int n)
+{
+	size_t	size;
+
+	size = 0;
+	if (n <= 0)
+		size++;
+	while (n != 0)
+		{
+			size++;
+			n /= 10;
+		}
+	return (size);
+}
 
 char	*ft_itoa(int n)
 {
 	char	*arr;
 	char	sign;
 
-	sign = 0;
-	if (n < 0)
-		sign = 1;
-	arr = ft_strnew(SIZE);
+	sign = n >= 0 ? 0 : 1;
+	if (!(arr = ft_strnew(get_size(n))))
+		return (0);
 	arr += ft_strlen(arr);
 	*arr = '\0';
 	if (n == 0)
@@ -40,14 +53,15 @@ char	*ft_itoa(int n)
 	return (arr);
 }
 
+
 int		main(void)
 {
-	int min = -2147483648;
+	int min = (-2147483648);
 	int max = 2147483647;
-	int rand = 0;
+	int rand = -0;
 
 	printf ("MININT : %s\n", ft_itoa(min));
-	printf ("MAXINT : %s\n", ft_itoa(max));
+	printf ("MAXINT : +%s\n", ft_itoa(max));
 	printf ("Rand : %s\n", ft_itoa(rand));
 	return (0);
 }

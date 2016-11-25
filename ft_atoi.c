@@ -32,9 +32,6 @@ int	ft_atoi(const char *str)
 	else if (str[i] == '+')
 		i++;
 	while (ft_isdigit(str[i]))
-	{
-		ans = (ans * 10) + str[i] - '0';
-		i++;
-	}
+		ans = (ans * 10) + str[i++] - '0';
 	return (sign * ans);
 }

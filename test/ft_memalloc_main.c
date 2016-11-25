@@ -25,14 +25,14 @@ void	*ft_memalloc(size_t size)
 
 int	main(void)
 {
-	char	*p;
+	int	*arr;
 	size_t	len;
 	size_t	i;
 
 	len = 10;
-	p = ft_memalloc(len);
+	arr = ft_memalloc(len);
 	i = -1;
 	while (++i < len)
-		p[i] = i + '0';
-	printf ("%s\n", p);
+		printf ("%d ", arr[i]);
+	return (0);
 }

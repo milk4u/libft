@@ -31,9 +31,9 @@ char		*ft_strncpy(char *dst, const char *src, size_t n)
 int		main(void)
 {
 	char	buff[256];
-	char	*src = "\n";
+	char	*src = "jadskjhadhqwuoehjaahsdpyah\n";
 
-	ft_strncpy(buff, src, 2);
+	ft_strncpy(buff, src, 0);
 	printf("%s\n", buff);
 	return (0);
 }
