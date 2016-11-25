@@ -10,19 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../libft.h"
 #include <stdio.h>
-#include "libft.h"
-
-char	*ft_strchr(const char *str, int c)
-{
-	while (*str)
-	{
-		if (*str == c)
-			return ((char*)str);
-		str++;
-	}
-	return (NULL);
-}
 
 int		main(void)
 {

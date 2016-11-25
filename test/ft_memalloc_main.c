@@ -10,18 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../libft.h"
 #include <stdio.h>
-#include "libft.h"
-
-void	*ft_memalloc(size_t size)
-{
-	void	*m;
-
-	if (!(m = malloc(size)))
-		return (NULL);
-	ft_memset(m, 0, size);
-	return (m);
-}
 
 int	main(void)
 {

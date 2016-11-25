@@ -10,19 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../libft.h"
 #include <stdio.h>
-#include "libft.h"
-
-char	*ft_strcpy(char *dest, const char *src)
-{
-	size_t i;
-
-	i = -1;
-	while (src[++i] != '\0')
-		dest[i] = src[i];
-	dest[i] = '\0';
-	return (dest);
-}
 
 int		main(void)
 {

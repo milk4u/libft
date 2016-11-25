@@ -10,12 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../libft.h"
 #include <stdio.h>
-
-int	ft_isgraph(int c)
-{
-	return ((c >= 33) && (c <= 126));
-}
 
 int	main(void)
 {

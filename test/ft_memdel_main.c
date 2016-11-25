@@ -10,14 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../libft.h"
 #include <stdio.h>
-#include "stdlib.h"
-
-void	ft_memdel(void **ap)
-{
-	free(*ap);
-	ap = NULL;
-}
 
 int		main(void)
 {

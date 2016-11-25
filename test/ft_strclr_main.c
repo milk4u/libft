@@ -10,14 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../libft.h"
 #include <stdio.h>
-#include "libft.h"
-
-void	ft_strclr(char *str)
-{
-	if (str)
-		ft_bzero(str, ft_strlen(str));
-}
 
 int		main(void)
 {
