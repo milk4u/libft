@@ -39,6 +39,8 @@ char    **ft_strsplit(char const *s, char c)
     size_t  cc;
     size_t  i;
 
+    if (!s)
+        return (NULL);
     if(!(ans = (char**)ft_strnew(ft_cwords(s, c))))
         return (NULL);
     i = 0;
