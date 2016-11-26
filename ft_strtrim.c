@@ -13,10 +13,10 @@ char	*ft_strtrim(char const *s)
 	if (!s)
 		return (NULL);
 	len = ft_strlen(s);
-	while (is_space(str[len - 1]) && len-- > 0)
+	while (is_space(s[len - 1]) && len-- > 0)
 		;
-	while (is_space(*s++) && len-- > 0)
-		;
+	while (is_space(*s) && len-- > 0)
+		s++;
 	if (!(cp = ft_strnew(len)))
 		return (NULL);
 	ft_strncpy(cp, s, len);
