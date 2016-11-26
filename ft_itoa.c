@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	get_size(int n)
+static size_t	get_size(int n)
 {
 	size_t	size;
 
@@ -27,16 +27,15 @@ size_t	get_size(int n)
 	return (size);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char	*arr;
 	char	sign;
 
 	sign = n >= 0 ? 0 : 1;
 	if (!(arr = ft_strnew(get_size(n))))
-		return (0);
+		return (NULL);
 	arr += ft_strlen(arr);
-	*arr = '\0';
 	if (n == 0)
 		*--arr = '0';
 	while (n != 0)
