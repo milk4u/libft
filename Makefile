@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: apisotsk <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2016/11/28 17:26:05 by apisotsk          #+#    #+#              #
+#    Updated: 2016/11/28 17:26:08 by apisotsk         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = 	libft.a
 SRC = 	ft_abs.c \
 		ft_atoi.c \
@@ -56,7 +68,15 @@ SRC = 	ft_abs.c \
 		ft_strsub.c \
 		ft_toascii.c \
 		ft_tolower.c \
-		ft_toupper.c 
+		ft_toupper.c \
+		ft_strtrim.c \
+		ft_strsplit.c \
+		ft_lstadd.c \
+		ft_lstdel.c \
+		ft_lstdelone.c \
+		ft_lstiter.c \
+		ft_lstnew.c \
+		ft_lstmap.c
 OBJ = $(SRC:.c=.o) 
 CFLAGS = -c -Wall -Wextra -Werror
 

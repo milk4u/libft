@@ -1,10 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: apisotsk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/28 10:15:52 by apisotsk          #+#    #+#             */
+/*   Updated: 2016/11/28 10:27:59 by apisotsk         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void    ft_listadd(t_list **lst, t_list *new)
+void	ft_lstadd(t_list **lst, t_list *new)
 {
-    if (lst && *lst && new)
-    {
-        new->next = *lst;
-        *lst = mew;
-    }    
+	new->next = *lst;
+	*lst = new;
 }

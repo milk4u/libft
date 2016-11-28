@@ -6,13 +6,25 @@
 /*   By: apisotsk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 14:28:55 by apisotsk          #+#    #+#             */
-/*   Updated: 2016/11/22 13:39:03 by apisotsk         ###   ########.fr       */
+/*   Updated: 2016/11/28 17:35:44 by apisotsk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void			ft_putnbr_fd(int n, int fd)
 {
-	ft_putstr_fd(ft_itoa(n), fd);
+	char		c;
+	long int	l;
+
+	l = n;
+	if (l < 0)
+	{
+		ft_putchar_fd('-', fd);
+		l = -l;
+	}
+	if (l > 9)
+		ft_putnbr_fd((l / 10), fd);
+	c = l % 10 + '0';
+	ft_putchar_fd(c, fd);
 }

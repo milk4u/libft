@@ -17,8 +17,6 @@ char		*ft_strncat(char *dst, const char *src, size_t n)
 	size_t	dstlen;
 	size_t	i;
 
-	if (!dst || !src)
-		return (NULL);
 	i = -1;
 	dstlen = ft_strlen(dst);
 	while ((++i < n) && (src[i] != '\0'))
